@@ -1,7 +1,6 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
   agent any
-    stages {
+  stages {
       stage('Build') {
         steps {
           sh 'wget https://raw.githubusercontent.com/9868-08/jenkins/master/Dockerfile'
