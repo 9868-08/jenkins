@@ -6,6 +6,10 @@
         become: true
         apt:
           update_cache: yes
+      
+      - name: ensure the repository is configured
+        apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
+        become: yes
     
       - name: Install OpenJDK Java
         become: yes
@@ -14,4 +18,11 @@
           state: present
         with_items:
          openjdk-8-jdk
+      
+      - name: ensure jenkins is installed
+         apt: name=jenkins update_cache=yes
+         become: yes
+   
+     - name: ensure jenkins is running
+         service: name=jenkins state=started
 ...

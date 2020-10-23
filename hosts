@@ -5,7 +5,7 @@
 
 [servers]
 virtualbox ansible_host=192.168.10.93
-monitoring ansible_host=178.154.226.148
+monitoring ansible_host=178.154.231.179
 
 ##########################################################################
 # Makes sure we use Python 3 (/usr/bin/python3) on remote hosts.
