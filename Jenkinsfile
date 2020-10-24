@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment {
         REPO = 'dinky98/tmp'
-#        REPO = 'https://github.com/9868-08/jenkins.git'
         PRIVATE_REPO = "${PRIVATE_REGISTRY}/${REPO}"
         DOCKER_PRIVATE = credentials('docker-private-registry')
     }
