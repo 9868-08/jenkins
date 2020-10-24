@@ -3,7 +3,7 @@ pipeline {
          docker { image 'node:14-alpine' }
   }
   stages {
-      stage('Build') {
+      stage('Build') 
         steps {
             sh if test -f "Dockerfile"; then
                 rm Dockerfileecho
@@ -15,6 +15,5 @@ pipeline {
              'wget https://raw.githubusercontent.com/9868-08/jenkins/master/helloworld.py'
              '/usr/bin/docker build . --tag hello-world;/docker run hello-worldi'
         }
-      }
     }
 }
