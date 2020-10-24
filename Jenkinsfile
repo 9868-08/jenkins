@@ -1,9 +1,8 @@
 pipeline {
   agent {
          docker { image 'node:14-alpine' }
-  }
   stages {
-      stage('Build'){ 
+      stage('Build') { 
         steps {
             sh if test -f "Dockerfile"; then
                 rm Dockerfileecho
