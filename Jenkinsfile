@@ -1,9 +1,4 @@
 pipeline { 
-    environment { 
-        registry = "dinky98/tmp" 
-        registryCredential = 'dinky98' 
-        dockerImage = '' 
-    }
     agent any 
     stages { 
         stage('Cloning our Git') { 
@@ -21,7 +16,6 @@ pipeline {
         stage('Run our image') { 
             steps { 
                 sh "docker run $registry:$BUILD_NUMBER" 
-                } 
             }
         } 
         stage('Cleaning up') { 
