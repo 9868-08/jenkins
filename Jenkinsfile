@@ -3,7 +3,6 @@ pipeline {
     environment {
         REPO = 'dinky98/tmp'
         PRIVATE_REPO = "${PRIVATE_REGISTRY}/${REPO}"
-        DOCKER_PRIVATE = credentials('docker-private-registry')
     }
     stages {
         stage ('Docker build Micro-Service') {
