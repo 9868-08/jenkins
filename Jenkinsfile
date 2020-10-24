@@ -4,10 +4,10 @@ pipeline {
   stages {
       stage('Build') { 
         steps {
-          sh if test -f "Dockerfile"; then
+          sh if [test -f "Dockerfile"]; then
              rm Dockerfileecho
              fi
-          sh if test -f "helloworld.py"; then
+          sh if [test -f "helloworld.py"]; then
              rm helloworld.py
              fi
           sh 'wget https://raw.githubusercontent.com/9868-08/jenkins/master/Dockerfile'
