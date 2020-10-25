@@ -11,14 +11,21 @@ pipeline {
                 sh { docker build . }
             } 
         }
+
+         stage('Docker Up') {
+            steps {
+                echo '> Building the docker containers ...'
+                sh 'docker build . -t dinky98/jekins'
+            }
+        }
         stage('Run our image') { 
             steps { 
-                sh "docker run $registry:$BUILD_NUMBER" 
+                sh "docker run dinky98/jekins" 
             }
         } 
         stage('Cleaning up') { 
             steps { 
-                sh "docker rmi $registry:$BUILD_NUMBER" 
+                sh "docker rmi dinky98/jekins" 
             }
         } 
     }
