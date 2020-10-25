@@ -6,11 +6,6 @@ pipeline {
                 git 'https://github.com/9868-08/jenkins.git' 
             }
         } 
-        stage('Building our image') { 
-            steps { 
-                sh { docker build . }
-            } 
-        }
 
          stage('Docker Up') {
             steps {
