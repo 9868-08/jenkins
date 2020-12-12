@@ -20,8 +20,15 @@
         become: yes
 
       - name: Install required system packages
-        apt: name={{ item }} state=latest update_cache=yes
-        loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools', 'openjdk-8-jdk', 'docker-ce']
+      apt: 
+        name:
+          - git
+          - apt-transport-https
+          - ca-certificates
+          - wget
+          - software-properties-common
+          - gnupg2
+          - curl
         become: yes
 
       - name: Install Docker Module for Python
