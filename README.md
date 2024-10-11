@@ -1,4 +1,4 @@
-# repository for work in sbernank  
+# test work to offer 
   
 To jenkins install ansible via playbooks:  
 ansible-playbook -l virtualbox -i hosts ./playbook_java.yml  
